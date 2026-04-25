@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { CreditCard, Database, Smartphone, Cog, Monitor } from "lucide-react";
+import { CreditCard, Database, Smartphone, Cog, Monitor, FlaskConical, ExternalLink } from "lucide-react";
 
 interface Project {
   icon: React.ElementType;
@@ -180,6 +180,40 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4, delay: projects.length * 0.1 }}
+            className="md:col-span-2 relative overflow-hidden glass-card rounded-2xl p-8 text-center hover:border-primary/30 transition-colors"
+            >
+              <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
+              <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
+              <div className="relative">
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 mb-4">
+                  <FlaskConical className="text-primary" size={14} />
+                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                    Interactive
+                    </span>
+                </div>
+                <h4 className="text-xl md:text-2xl font-bold mb-2">
+                  Live QA Tools & Demos
+                </h4>
+                <p className="text-sm text-muted-foreground max-w-lg mx-auto mb-6">
+                  API Health Monitor, Test Report Viewer, Performance Dashboards
+                  — built to showcase real QA engineering skills, not just test
+                  scripts.
+                </p>
+                <a
+                  href="https://ridhotadjudin.my.id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  Explore Live Tools
+                  <ExternalLink size={16} />
+                </a>
+              </div>
+            </motion.div>
         </div>
       </div>
     </section>
