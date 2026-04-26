@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     url: "https://www.ridhotadjudin.id",
     images: [
       {
-        url: "https://www.ridhotadjudin.id/og-image.jpg",
+        url: "https://www.ridhotadjudin.id/og-image.png",
         width: 1200,
         height: 630,
         alt: "Ridho Tadjudin Portfolio",
