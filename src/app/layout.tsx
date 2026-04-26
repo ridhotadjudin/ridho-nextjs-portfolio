@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ridho Tadjudin - Senior QA Automation Engineer & SDET",
+  title: "Ridho Tadjudin — Senior QA Automation Engineer & SDET",
   description:
     "Personal portfolio of Ridho Tadjudin. Quality Engineer specializing in enterprise FinTech automation, CI/CD integration, and cross-country QA leadership.",
   keywords: [
@@ -30,18 +30,24 @@ export const metadata: Metadata = {
     "Quality Assurance",
   ],
   authors: [{ name: "Ridho Tadjudin" }],
-  openGraph: {
-    title: "Ridho Tadjudin - Senior QA Automation Engineer & SDET",
-    description:
-      "Quality Engineer specializing in enterprise FinTech automation, CI/CD integration, and cross-country QA leadership.",
-    type: "website",
-    locale: "en_US",
-  },
   twitter: {
     card: "summary_large_image",
-    title: "Ridho Tadjudin - Senior QA Automation Engineer",
+    title: "Ridho Tadjudin — Senior QA Automation Engineer & SDET",
     description:
       "Quality Engineer specializing in enterprise FinTech automation and cross-country QA leadership.",
+  },
+  openGraph:{
+    title: "Ridho Tadjudin — Quality Engineer",
+    description: "Fill Stack Quality Engineer | SDET at Manulife Indonesia",
+    url: "https://www.ridhotadjudin.id",
+    images: [
+      {
+        url: "https://www.ridhotadjudin.id/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ridho Tadjudin Portfolio",
+      },
+    ],
   },
 };
 
