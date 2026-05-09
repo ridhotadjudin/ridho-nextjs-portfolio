@@ -5,6 +5,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion_12.38.0-0055FF?style=flat-square&logo=framer&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 A modern, responsive personal portfolio and branding website built with Next.js 16, featuring smooth animations, dark/light theme switching, and a component-driven architecture.
 
@@ -147,6 +148,12 @@ The project uses Next.js 16 App Router with server components by default, select
 ### Animation Orchestration
 
 Framer Motion is used with a layered approach — page-level transitions in the layout, section-level entrance animations triggered by scroll position, and micro-interactions on interactive elements. Animation variants are defined per component, keeping motion design co-located with the UI it enhances.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
