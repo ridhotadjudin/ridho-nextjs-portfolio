@@ -95,7 +95,7 @@ export default function Hero() {
               Contact Me
             </a>
             <a
-              href="/cv.pdf"
+              href="/Ridho_Tadjudin_CV.pdf"
               className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3 text-sm font-semibold hover:bg-muted transition-colors"
             >
               <Download size={16} />
