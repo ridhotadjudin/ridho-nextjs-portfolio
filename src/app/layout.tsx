@@ -39,10 +39,10 @@ export const metadata: Metadata = {
   openGraph:{
     title: "Ridho Tadjudin — Quality Engineer",
     description: "Fill Stack Quality Engineer | SDET at Manulife Indonesia",
-    url: "https://www.ridhotadjudin.id",
+    url: "https://ridhotadjudin.id",
     images: [
       {
-        url: "https://www.ridhotadjudin.id/og-image.png",
+        url: "https://ridhotadjudin.id/og-image.png",
         width: 1200,
         height: 630,
         alt: "Ridho Tadjudin Portfolio",
