@@ -17,7 +17,7 @@ const navLinks = [
 export default function Header() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -77,11 +77,11 @@ export default function Header() {
             </button>
           )}
           <button
-            onClick={() => setMobileOpen(!mobileOpen)}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
@@ -100,7 +100,7 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.label}
