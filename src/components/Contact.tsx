@@ -23,21 +23,31 @@ function LinkedinIcon({ className, size = 18 }: { className?: string; size?: num
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    // For now, open mailto link with form data
-    const name = data.get("name") as string;
-    const email = data.get("email") as string;
-    const message = data.get("message") as string;
-    window.location.href = `mailto:ridhotadjudin@gmail.com?subject=Portfolio Contact from ${name}&body=${encodeURIComponent(
-      `From: ${name} (${email})\n\n${message}`
-    )}`;
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setStatus("sending");
+    try {
+      const res = await fetch("https://hook.ridhotadjudin.id/webhook/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+        }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    } finally {
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -161,7 +171,13 @@ export default function Contact() {
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity w-full justify-center"
               >
                 <Send size={16} />
-                {submitted ? "Opening Email Client..." : "Send Message"}
+                {status === "sending"
+                  ? "Sending..."
+                  : status === "success"
+                  ? "Message Sent!"
+                  : status === "error"
+                  ? "Failed — Try Again"
+                  : "Send Message"}
               </button>
             </form>
           </motion.div>
