@@ -38,98 +38,115 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/20 rounded-full blur-3xl" />
-      </div>
-
-      <div className="relative mx-auto max-w-6xl px-6 py-20 text-center">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
+      <div className="relative mx-auto max-w-4xl w-full px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="mb-4 text-sm font-mono tracking-widest text-primary uppercase">
-            Welcome to my portfolio
-          </p>
+          {/* Terminal window */}
+          <div className="term-panel rounded-xl overflow-hidden">
+            <div className="term-titlebar">
+              <span className="term-dot bg-err" />
+              <span className="term-dot bg-warn" />
+              <span className="term-dot bg-term" />
+              <span className="ml-3 font-mono text-xs text-muted-foreground">
+                ridho@portfolio: ~
+              </span>
+            </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Hi, I&apos;m{" "}
-            <span className="gradient-text">Ridho Tadjudin</span>
-          </h1>
+            <div className="p-6 sm:p-10 font-mono">
+              <p className="text-sm sm:text-base text-muted-foreground mb-6">
+                <span className="text-term">$</span> whoami
+              </p>
 
-          <div className="h-12 md:h-16 flex items-center justify-center mb-8">
-            <motion.p
-              key={roleIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="text-xl md:text-3xl font-semibold text-muted-foreground"
-            >
-              {roles[roleIndex]}
-            </motion.p>
-          </div>
+              <h1 className="font-mono text-3xl sm:text-5xl font-bold tracking-tight mb-8">
+                Ridho <span className="gradient-text">Tadjudin</span>
+                <span className="cursor-blink text-term">█</span>
+              </h1>
 
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-10 leading-relaxed">
-            Architecting quality for enterprise FinTech at scale. 4+ years building
-            automation frameworks, leading QA teams, and delivering zero-defect
-            releases across multi-country platforms.
-          </p>
+              <p className="text-sm sm:text-base text-muted-foreground mb-3">
+                <span className="text-term">$</span> cat role.txt
+              </p>
+              <div className="h-10 flex items-center mb-8">
+                <motion.p
+                  key={roleIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-xl sm:text-2xl font-semibold text-term"
+                >
+                  {roles[roleIndex]}
+                </motion.p>
+              </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3 text-sm font-semibold hover:bg-muted transition-colors"
-            >
-              <Mail size={16} />
-              Contact Me
-            </a>
-            <a
-              href="/Ridho_Tadjudin_CV.pdf"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3 text-sm font-semibold hover:bg-muted transition-colors"
-            >
-              <Download size={16} />
-              Download CV
-            </a>
-          </div>
+              <p className="text-sm sm:text-base text-muted-foreground mb-3">
+                <span className="text-term">$</span> cat mission.txt
+              </p>
+              <p className="text-sm sm:text-base leading-relaxed mb-8 text-foreground/80">
+                Architecting quality for enterprise FinTech at scale. 4+ years
+                building automation frameworks, leading QA teams, and
+                delivering zero-defect releases across multi-country
+                platforms.
+              </p>
 
-          {/* Social Links */}
-          <div className="flex items-center justify-center gap-6">
-            <a
-              href="https://github.com/ridhotadjudin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="GitHub"
-            >
-              <GithubIcon size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/ridhotadjudin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="LinkedIn"
-            >
-              <LinkedinIcon size={24} />
-            </a>
-            <a
-              href="mailto:ridhotadjudin@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="Email"
-            >
-              <Mail size={24} />
-            </a>
+              <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                <span className="text-term">$</span> ls ./actions
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <a
+                  href="#projects"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+                >
+                  ./view_work
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-mono hover:bg-muted transition-colors"
+                >
+                  ./contact
+                </a>
+                <a
+                  href="/Ridho_Tadjudin_CV.pdf"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-mono hover:bg-muted transition-colors"
+                >
+                  <Download size={16} />
+                  ./cv.pdf
+                </a>
+              </div>
+
+              <p className="text-sm text-muted-foreground mb-4">
+                <span className="text-term">$</span> cat socials.json
+              </p>
+              <div className="flex items-center gap-6">
+                <a
+                  href="https://github.com/ridhotadjudin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-term transition-colors"
+                  aria-label="GitHub"
+                >
+                  <GithubIcon size={22} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ridhotadjudin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-term transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon size={22} />
+                </a>
+                <a
+                  href="mailto:ridhotadjudin@gmail.com"
+                  className="text-muted-foreground hover:text-term transition-colors"
+                  aria-label="Email"
+                >
+                  <Mail size={22} />
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
 
@@ -138,7 +155,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute -bottom-12 left-1/2 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

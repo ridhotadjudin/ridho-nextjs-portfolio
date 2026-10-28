@@ -19,11 +19,28 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-muted/50">
-      <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Ridho Tadjudin. Built with Next.js & Tailwind CSS.
+      <div className="mx-auto max-w-6xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="font-mono text-sm text-muted-foreground">
+          <span className="text-term">[OK]</span> all systems operational · ©{" "}
+          {new Date().getFullYear()} Ridho Tadjudin
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
+          <a
+            href="https://lab.ridhotadjudin.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-sm text-accent hover:text-primary transition-colors"
+          >
+            lab ↗
+          </a>
+          <a
+            href="https://dashboard.ridhotadjudin.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            status ↗
+          </a>
           <a
             href="https://github.com/ridhotadjudin"
             target="_blank"
